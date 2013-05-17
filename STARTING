@@ -1,0 +1,39 @@
+Welcome! We are happy you decided to join the experiment in hyper-agility from the I T.A.K.E. unconference.
+
+This text file gives you all the necessary information to get started. If you need anything more, just ask.
+
+## If you never used grails before 
+
+Don't worry, it's simple.
+
+Grails is an MVC web framework very similar with ruby on rails. It uses a language called Groovy. Groovy is a JVM language, and you can safely write code using Java syntax. However, it allows you to write less code, so it's useful to learn its constructs.
+
+* Install grails from http://www.grails.org/
+* If you use eclipse, install grails support plugin
+* IntelliJ Idea Community edition has support for groovy. The ultimate edition has support for grails.
+* Alternatively, install Groovy/Grails Tool Suite: http://grails.org/products/ggts. It is a tool based on eclipse.
+* Read the quick start: http://www.grails.org/doc/latest/guide/gettingStarted.html
+
+## Get the code
+
+Use git to get this code. 
+
+## Run the app
+
+grails run-app
+
+or
+
+run it from your IDE
+
+## Run the tests
+
+grails TestApp
+
+## Start developing!
+
+Talk to the Product Owner. Pick one task from the board.
+
+Or just help someone else.
+
+
