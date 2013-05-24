@@ -1,8 +1,5 @@
 .metadata/
 
-# web application files
-/web-app/WEB-INF
-
 # IDE support files
 /.classpath
 /.launch
@@ -30,11 +27,6 @@
 
 # plugin release file
 /*.zip
-
-# older plugin install locations
-/plugins
-/web-app/plugins
-/web-app/WEB-INF/classes
 
 # "temporary" build files
 /target
