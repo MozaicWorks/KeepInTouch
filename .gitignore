@@ -9,6 +9,9 @@
 /*.tmproj
 /ivy*
 /eclipse
+.idea
+KeepInTouch.iml
+KeepInTouch-grailsPlugins.iml
 
 # default HSQL database files for production mode
 /prodDb.*
@@ -33,4 +36,3 @@
 
 # other
 *.iws
-
