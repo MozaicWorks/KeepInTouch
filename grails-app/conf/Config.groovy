@@ -62,7 +62,7 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
-        grails.plugin.databasemigration.dropOnStart = true
+//        grails.plugin.databasemigration.dropOnStart = true
     }
     test {
 //        grails.plugin.databasemigration.dropOnStart = true
