@@ -1,7 +1,6 @@
 package keepintouch
 
 import com.sun.istack.internal.Nullable;
-import java.security.MessageDigest;
 
 class Attendee {
   String name
@@ -20,14 +19,6 @@ class Attendee {
     twitter(blank: true, nullable: true)
     blog(blank: true, nullable: true)
     picture(nullable: true)
-  }
-
-  def gravatarUrl() {
-    if(!email) return "http://www.gravatar.com/avatar"
-    MessageDigest md = MessageDigest.getInstance('MD5')
-    md.update(this.email.bytes)
-    String emailAsMD5 = new BigInteger(1, md.digest()).toString(16).padLeft(32, '0')
-    "https://secure.gravatar.com/avatar/${emailAsMD5}"
   }
 
 }

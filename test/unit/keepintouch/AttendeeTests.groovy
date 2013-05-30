@@ -32,15 +32,4 @@ import org.junit.*
       assertFalse attendee.validate()
     }
 
-    void testGravatarUrl() {
-      String gravatarUrl = "https://secure.gravatar.com/avatar/eb2e398ce847e2ca474a74d42d47ff52"
-      Attendee attendee = new Attendee(name:"aimee", age: 32, email: "aimee@aimeerivers.com")
-      assertEquals(gravatarUrl, attendee.gravatarUrl())
-    }
-
-    void testGravatarUrlWithoutEmail() {
-      String defaultGravatarUrl = "http://www.gravatar.com/avatar"
-      Attendee attendee = new Attendee(name:"aimee", age: 32)
-      assertEquals(defaultGravatarUrl, attendee.gravatarUrl())
-    }
   }
