@@ -30,6 +30,8 @@
         <!-- Carousel items -->
         <div class="carousel-inner">
 
+
+
           <div class="active item">
             <img src="https://secure.gravatar.com/avatar/dc44752c6b185f3fb904ad639b7d59d1?s=500&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D51&r=G" alt="avatar" />
             <div class="carousel-caption">
