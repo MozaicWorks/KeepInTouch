@@ -13,6 +13,7 @@ class AttendeeControllerTests {
         assert params != null
         // TODO: Populate valid properties like...
         params["name"] = 'Alex'
+        params["age"] = 25
         params["location"] = 'Bucharest'
         params["email"]='alexboly@gmail.com'
     }
