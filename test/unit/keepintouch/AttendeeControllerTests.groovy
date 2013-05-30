@@ -107,6 +107,7 @@ class AttendeeControllerTests {
         //TODO: add invalid values to params object
         params.name = "xxx"
         params.email = "13"
+        params.age = -1
 
         controller.update()
 
