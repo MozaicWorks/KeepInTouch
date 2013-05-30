@@ -32,8 +32,11 @@
 				<g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${attendeeInstance.id}">${fieldValue(bean: attendeeInstance, field: "name")}</g:link></td>
-					
+						<td>
+                            <avatar:gravatar email="${attendeeInstance.email}"/>
+                            <g:link action="show" id="${attendeeInstance.id}">${fieldValue(bean: attendeeInstance, field: "name")}</g:link>
+                        </td>
+
 					</tr>
 				</g:each>
 				</tbody>

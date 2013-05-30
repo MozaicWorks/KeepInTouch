@@ -48,6 +48,7 @@ grails.project.dependency.resolution = {
     plugins {
 	compile ":heroku:1.0.1"
 	compile ":cloud-support:1.0.8"
+        compile ":avatar:0.6.3"
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.8.3"
         runtime ":resources:1.1.6"

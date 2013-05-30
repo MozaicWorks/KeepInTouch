@@ -28,7 +28,16 @@
 					<span id="name-label" class="property-label"><g:message code="attendee.name.label" default="Name" /></span>
 					
 						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${attendeeInstance}" field="name"/></span>
-					
+
+				</li>
+				</g:if>
+
+                <g:if test="${attendeeInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="attendee.email.label" default="Email" /></span>
+
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${attendeeInstance}" field="email"/></span>
+
 				</li>
 				</g:if>
 			
