@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list attendee">
 			
+				<g:if test="${attendeeInstance?.location}">
+				<li class="fieldcontain">
+					<span id="location-label" class="property-label"><g:message code="attendee.location.label" default="Location" /></span>
+					
+						<span class="property-value" aria-labelledby="location-label"><g:fieldValue bean="${attendeeInstance}" field="location"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${attendeeInstance?.name}">
 				<li class="fieldcontain">
 					<span id="name-label" class="property-label"><g:message code="attendee.name.label" default="Name" /></span>
