@@ -31,4 +31,10 @@ import org.junit.*
       Attendee attendee = new Attendee(name:"Alex", age: 91)
       assertFalse attendee.validate()
     }
+
+    void testGravatarUrl() {
+      String gravatarUrl = "https://secure.gravatar.com/avatar/eb2e398ce847e2ca474a74d42d47ff52?s=500"
+      Attendee attendee = new Attendee(name:"aimee", age: 32, email: "aimee@aimeerivers.com")
+      assertEquals(gravatarUrl, attendee.gravatarUrl())
+    }
   }
