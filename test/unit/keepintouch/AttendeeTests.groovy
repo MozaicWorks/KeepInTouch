@@ -12,8 +12,18 @@ import org.junit.*
 @TestFor(Attendee)
   class AttendeeTests {
 
-    void testSomething() {
+    void testValidAttendee() {
       Attendee attendee = new Attendee(name:"Alex", age: 20)
       assertEquals("Alex", attendee.name)
+    }
+
+    void testAgeTooYoung() {
+      Attendee attendee = new Attendee(name:"Alex", age: 14)
+      assertFalse attendee.validate()
+    }
+
+    void testAgeTooOld() {
+      Attendee attendee = new Attendee(name:"Alex", age: 91)
+      assertFalse attendee.validate()
     }
   }
