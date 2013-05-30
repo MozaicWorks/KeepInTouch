@@ -10,6 +10,7 @@
 /ivy*
 /eclipse
 /web-app/upload
+/out
 
 # default HSQL database files for production mode
 /prodDb.*

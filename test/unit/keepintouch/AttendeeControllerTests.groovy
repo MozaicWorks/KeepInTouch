@@ -16,6 +16,7 @@ class AttendeeControllerTests {
         params["age"] = 25
         params["location"] = 'Bucharest'
         params["email"]='alexboly@gmail.com'
+        params["blog"] = "123"
     }
 
     void testIndex() {

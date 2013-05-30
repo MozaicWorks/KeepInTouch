@@ -18,6 +18,6 @@ class Attendee {
     age(range: 15..90)
     twitter(blank: true, nullable: true)
     blog(blank: true, nullable: true)
-    picture(blank: true)
+    picture(nullable: true)
   }
 }
