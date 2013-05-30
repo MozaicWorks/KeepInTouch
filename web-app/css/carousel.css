@@ -1,5 +1,6 @@
-#profiles-carousel .item {
+#profiles-carousel .carousel-inner {
   background: #000;
+  min-height: 500px;
 }
 
 #profiles-carousel .item img {
