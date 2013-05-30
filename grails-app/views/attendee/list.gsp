@@ -37,7 +37,7 @@
 	            	<div class="carousel-caption">
 	              		<h4>${fieldValue(bean: attendeeInstance, field: "name")}</h4>
 	              		<p>Location: <strong>${fieldValue(bean: attendeeInstance, field: "location")}</strong></p>
-	              		<p>Email: ${i} <strong>${fieldValue(bean: attendeeInstance, field: "email")}</strong></p>
+	              		<p>Email: <strong>${fieldValue(bean: attendeeInstance, field: "email")}</strong></p>
 	            	</div>
           		</div>
 				
