@@ -79,11 +79,12 @@
 
 				</g:if>
 
-                <li class="fieldcontain">
+                <g:if test="${attendeeInstance.picture}">
+                    <li class="fieldcontain">
+                        <img src="${resource(dir: 'upload', file: attendeeInstance.picture)}"/>
 
-                    <img src="${resource(dir: 'upload', file: attendeeInstance.picture)}"/>
-
-                </li>
+                    </li>
+                </g:if>
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
