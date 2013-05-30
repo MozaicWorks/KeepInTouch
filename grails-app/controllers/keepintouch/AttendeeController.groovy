@@ -27,6 +27,8 @@ class AttendeeController {
         if(file) {
             def fileName = file.getOriginalFilename()
             attendeeInstance.picture = fileName
+            def rootPath = request.getSession().getServletContext().getRealPath("/")
+            file.transferTo(new File("${rootPath}/upload/${fileName}"))
         }
 
         if (!attendeeInstance.save(flush: true)) {
@@ -34,10 +36,6 @@ class AttendeeController {
             return
         }
 
-        if(file) {
-            def rootPath = request.getSession().getServletContext().getRealPath("/")
-            file.transferTo(new File("${rootPath}/upload/${fileName}"))
-        }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'attendee.label', default: 'Attendee'), attendeeInstance.id])
         redirect(action: "show", id: attendeeInstance.id)
