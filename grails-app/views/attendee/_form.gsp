@@ -48,4 +48,9 @@
 	<g:textField name="blog" value="${attendeeInstance?.blog}"/>
 </div>
 
+<div class="fieldcontain ">
+    <label>Picture: </label>
+    <input type="file" name="picture" />
+</div>
+
 
