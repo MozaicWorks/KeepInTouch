@@ -9,6 +9,7 @@ class Attendee {
   Integer age
   String twitter
   String blog
+  String picture
 
   static constraints = {
     name()
@@ -17,5 +18,6 @@ class Attendee {
     age(range: 15..90)
     twitter(blank: true, nullable: true)
     blog(blank: true, nullable: true)
+    picture(blank: true)
   }
 }
