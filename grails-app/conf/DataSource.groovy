@@ -13,7 +13,9 @@ hibernate {
 environments {
     development {
         dataSource {
+            //dbCreate = "update"
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+
         }
     }
     test {

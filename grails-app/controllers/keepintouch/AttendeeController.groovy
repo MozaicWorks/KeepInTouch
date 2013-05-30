@@ -1,6 +1,7 @@
 package keepintouch
 
 import org.springframework.dao.DataIntegrityViolationException
+import org.springframework.web.multipart.MultipartFile
 
 class AttendeeController {
 
@@ -21,10 +22,21 @@ class AttendeeController {
 
     def save() {
         def attendeeInstance = new Attendee(params)
+
+        def file = request.getFile("picture")
+        def fileName = file.getOriginalFilename()
+
+        attendeeInstance.picture = fileName
+
         if (!attendeeInstance.save(flush: true)) {
             render(view: "create", model: [attendeeInstance: attendeeInstance])
             return
         }
+
+
+        def rootPath = request.getSession().getServletContext().getRealPath("/")
+
+        file.transferTo(new File("${rootPath}/upload/${fileName}"))
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'attendee.label', default: 'Attendee'), attendeeInstance.id])
         redirect(action: "show", id: attendeeInstance.id)

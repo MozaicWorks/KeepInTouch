@@ -22,7 +22,8 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list attendee">
-			
+
+
 				<g:if test="${attendeeInstance?.name}">
 				<li class="fieldcontain">
 					<span id="name-label" class="property-label"><g:message code="attendee.name.label" default="Name" /></span>
@@ -75,7 +76,14 @@
 						<span class="property-value" aria-labelledby="blog-label"><g:fieldValue bean="${attendeeInstance}" field="blog"/></span>
 					
 				</li>
+
 				</g:if>
+
+                <li class="fieldcontain">
+
+                    <img src="${resource(dir: 'upload', file: attendeeInstance.picture)}"/>
+
+                </li>
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
