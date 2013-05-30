@@ -32,7 +32,9 @@
 				
         <div class="${i == 0 ? 'active' : ''} item">
 				
-                <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="500"/>
+                <g:link action="show" id="${attendeeInstance.id}">
+                  <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="500"/>
+                </g:link>
 	            	<div class="carousel-caption">
 	              		<h4>${fieldValue(bean: attendeeInstance, field: "name")}</h4>
 	              		<p>Location: <strong>${fieldValue(bean: attendeeInstance, field: "location")}</strong></p>
