@@ -11,7 +11,8 @@ class AttendeeControllerTests {
 
     def populateValidParams(params) {
         assert params != null
-        params["name"] = 'Alex'
+        // TODO: Populate valid properties like...
+        //params["name"] = 'someValidName'
     }
 
     void testIndex() {
@@ -85,7 +86,6 @@ class AttendeeControllerTests {
         assert model.attendeeInstance == attendee
     }
 
-    @Ignore
     void testUpdate() {
         controller.update()
 
