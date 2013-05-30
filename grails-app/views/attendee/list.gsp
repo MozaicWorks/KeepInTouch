@@ -64,24 +64,21 @@
 			<table>
 				<thead>
 					<tr>
-					
+                        <g:sortableColumn property="name" title="${message(code: 'attendee.name.label', default: 'Name')}" />
 						<g:sortableColumn property="location" title="${message(code: 'attendee.location.label', default: 'Location')}" />
-					
-						<g:sortableColumn property="name" title="${message(code: 'attendee.name.label', default: 'Name')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-
-						<td>
-                            <avatar:gravatar email="${attendeeInstance.email}"/>
-                            ${fieldValue(bean: attendeeInstance, field: "location")}
-                        </td>
                         <td>
+                            <avatar:gravatar email="${attendeeInstance.email}"/>
                             <g:link action="show" id="${attendeeInstance.id}">${fieldValue(bean: attendeeInstance, field: "name")}</g:link>
+                        </td>
+
+
+                        <td>
+                            ${fieldValue(bean: attendeeInstance, field: "location")}
                         </td>
 
 
