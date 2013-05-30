@@ -23,9 +23,14 @@
 
       <div id="profiles-carousel" class="carousel slide">
         <ol class="carousel-indicators">
-          <li data-target="#profiles-carousel" data-slide-to="0" class="active"></li>
-          <li data-target="#profiles-carousel" data-slide-to="1"></li>
-          <li data-target="#profiles-carousel" data-slide-to="2"></li>
+        <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
+          	<% classValue = "" %>
+          	<g:if test="${i==0}">
+          		<% classValue = "active" %>
+          	</g:if>
+          
+          	<li data-target="#profiles-carousel" data-slide-to="${i}" class="<%=classValue %>"></li>
+        </g:each>  
         </ol>
         <!-- Carousel items -->
         <div class="carousel-inner">
