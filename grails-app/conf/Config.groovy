@@ -62,12 +62,20 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        grails.plugin.databasemigration.dropOnStart = true
+    }
+    test {
+//        grails.plugin.databasemigration.dropOnStart = true
     }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
+
+grails.plugin.databasemigration.updateOnStart = true
+grails.plugin.databasemigration.updateOnStartFileNames = ['changelog.groovy']
+
 
 // log4j configuration
 log4j = {
