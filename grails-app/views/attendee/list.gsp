@@ -77,6 +77,8 @@
 						<td>
                             <avatar:gravatar email="${attendeeInstance.email}"/>
                             ${fieldValue(bean: attendeeInstance, field: "location")}
+                        </td>
+                        <td>
                             <g:link action="show" id="${attendeeInstance.id}">${fieldValue(bean: attendeeInstance, field: "name")}</g:link>
                         </td>
 
