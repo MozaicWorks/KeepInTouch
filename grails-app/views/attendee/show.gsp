@@ -23,15 +23,6 @@
 			</g:if>
 			<ol class="property-list attendee">
 			
-				<g:if test="${attendeeInstance?.location}">
-				<li class="fieldcontain">
-					<span id="location-label" class="property-label"><g:message code="attendee.location.label" default="Location" /></span>
-					
-						<span class="property-value" aria-labelledby="location-label"><g:fieldValue bean="${attendeeInstance}" field="location"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${attendeeInstance?.name}">
 				<li class="fieldcontain">
 					<span id="name-label" class="property-label"><g:message code="attendee.name.label" default="Name" /></span>
@@ -49,7 +40,42 @@
 
 				</li>
 				</g:if>
-			
+				
+				<g:if test="${attendeeInstance?.location}">
+				<li class="fieldcontain">
+					<span id="location-label" class="property-label"><g:message code="attendee.location.label" default="Location" /></span>
+					
+						<span class="property-value" aria-labelledby="location-label"><g:fieldValue bean="${attendeeInstance}" field="location"/></span>
+					
+				</li>
+				</g:if>
+				
+				<g:if test="${attendeeInstance?.age}">
+				<li class="fieldcontain">
+					<span id="age-label" class="property-label"><g:message code="attendee.age.label" default="Age" /></span>
+					
+						<span class="property-value" aria-labelledby="age-label"><g:fieldValue bean="${attendeeInstance}" field="age"/></span>
+					
+				</li>
+				</g:if>
+				
+				<g:if test="${attendeeInstance?.twitter}">
+				<li class="fieldcontain">
+					<span id="twitter-label" class="property-label"><g:message code="attendee.twitter.label" default="Twitter" /></span>
+					
+						<span class="property-value" aria-labelledby="twitter-label"><g:fieldValue bean="${attendeeInstance}" field="twitter"/></span>
+					
+				</li>
+				</g:if>
+				
+				<g:if test="${attendeeInstance?.blog}">
+				<li class="fieldcontain">
+					<span id="blog-label" class="property-label"><g:message code="attendee.blog.label" default="Blog" /></span>
+					
+						<span class="property-value" aria-labelledby="blog-label"><g:fieldValue bean="${attendeeInstance}" field="blog"/></span>
+					
+				</li>
+				</g:if>
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

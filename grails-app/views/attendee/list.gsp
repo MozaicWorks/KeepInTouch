@@ -29,33 +29,18 @@
         </ol>
         <!-- Carousel items -->
         <div class="carousel-inner">
-
-
-
-          <div class="active item">
-            <img src="https://secure.gravatar.com/avatar/dc44752c6b185f3fb904ad639b7d59d1?s=500&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D51&r=G" alt="avatar" />
-            <div class="carousel-caption">
-              <h4>Robert Calin</h4>
-              <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="https://secure.gravatar.com/avatar/eb2e398ce847e2ca474a74d42d47ff52?s=500&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D51&r=G" alt="avatar" />
-            <div class="carousel-caption">
-              <h4>aimee rivers</h4>
-              <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.</p>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="https://secure.gravatar.com/avatar/195766b982bba78f88db36b25fab225d?s=500&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D51&r=G" alt="avatar" />
-            <div class="carousel-caption">
-              <h4>Alexandru Bolboaca</h4>
-              <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.</p>
-            </div>
-          </div>
-        </div>
+			<g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
+				<div class="item">
+	            	<img src="https://secure.gravatar.com/avatar/dc44752c6b185f3fb904ad639b7d59d1?s=500&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D51&r=G" alt="avatar" />
+	            	<div class="carousel-caption">
+	              		<h4>${fieldValue(bean: attendeeInstance, field: "name")}</h4>
+	              		<p>Location: <strong>${fieldValue(bean: attendeeInstance, field: "location")}</strong></p>
+	              		<p>Email: <strong>${fieldValue(bean: attendeeInstance, field: "email")}</strong></p>
+	            	</div>
+          		</div>
+				
+			</g:each>
+	    </div>
         <!-- Carousel nav -->
         <a class="carousel-control left" href="#profiles-carousel" data-slide="prev">&lsaquo;</a>
         <a class="carousel-control right" href="#profiles-carousel" data-slide="next">&rsaquo;</a>
@@ -64,10 +49,17 @@
 			<table>
 				<thead>
 					<tr>
-					
+						<g:sortableColumn property="name" title="${message(code: 'attendee.name.label', default: 'Name')}" />
+						
 						<g:sortableColumn property="location" title="${message(code: 'attendee.location.label', default: 'Location')}" />
 					
-						<g:sortableColumn property="name" title="${message(code: 'attendee.name.label', default: 'Name')}" />
+						<g:sortableColumn property="email" title="${message(code: 'attendee.email.label', default: 'Email')}" />
+						
+						<g:sortableColumn property="age" title="${message(code: 'attendee.age.label', default: 'Age')}" />
+						
+						<g:sortableColumn property="twitter" title="${message(code: 'attendee.twitter.label', default: 'Twitter')}" />
+						
+						<g:sortableColumn property="blog" title="${message(code: 'attendee.blog.label', default: 'Blog')}" />
 					
 					</tr>
 				</thead>
@@ -75,16 +67,25 @@
 				<g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-
-						<td>
-                            <avatar:gravatar email="${attendeeInstance.email}"/>
-                            ${fieldValue(bean: attendeeInstance, field: "location")}
-                        </td>
                         <td>
                             <g:link action="show" id="${attendeeInstance.id}">${fieldValue(bean: attendeeInstance, field: "name")}</g:link>
                         </td>
-
-
+						<td>
+                            ${fieldValue(bean: attendeeInstance, field: "location")}
+                        </td>
+                        <td>
+                            <avatar:gravatar email="${attendeeInstance.email}"/>
+                            ${fieldValue(bean: attendeeInstance, field: "email")}
+                        </td>
+						<td>
+                            ${fieldValue(bean: attendeeInstance, field: "age")}
+                        </td>
+                        <td>
+                            ${fieldValue(bean: attendeeInstance, field: "twitter")}
+                        </td>
+                        <td>
+                            ${fieldValue(bean: attendeeInstance, field: "blog")}
+                        </td>
 					</tr>
 				</g:each>
 				</tbody>
