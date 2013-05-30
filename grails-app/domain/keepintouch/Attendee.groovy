@@ -23,10 +23,11 @@ class Attendee {
   }
 
   def gravatarUrl() {
+    if(!email) return "http://www.gravatar.com/avatar"
     MessageDigest md = MessageDigest.getInstance('MD5')
     md.update(this.email.bytes)
     String emailAsMD5 = new BigInteger(1, md.digest()).toString(16).padLeft(32, '0')
-    "https://secure.gravatar.com/avatar/${emailAsMD5}?s=500"
+    "https://secure.gravatar.com/avatar/${emailAsMD5}"
   }
 
 }
