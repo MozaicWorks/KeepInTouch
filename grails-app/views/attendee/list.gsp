@@ -23,15 +23,17 @@
 
       <div id="profiles-carousel" class="carousel slide">
         <ol class="carousel-indicators">
-          <li data-target="#profiles-carousel" data-slide-to="0" class="active"></li>
-          <li data-target="#profiles-carousel" data-slide-to="1"></li>
-          <li data-target="#profiles-carousel" data-slide-to="2"></li>
+          <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
+            <li data-target="#profiles-carousel" data-slide-to="${i}" class="${i == 0 ? 'active' : ''}"></li>
+          </g:each>
         </ol>
         <!-- Carousel items -->
         <div class="carousel-inner">
 			<g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
-				<div class="item">
-	            	<img src="https://secure.gravatar.com/avatar/dc44752c6b185f3fb904ad639b7d59d1?s=500&d=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D51&r=G" alt="avatar" />
+				
+        <div class="${i == 0 ? 'active' : ''} item">
+				
+	            	<img src="https://secure.gravatar.com/avatar/${fieldValue(bean: attendeeInstance, field: "email").encodeAsMD5()}?s=500" alt="avatar" width="500" height="500" />
 	            	<div class="carousel-caption">
 	              		<h4>${fieldValue(bean: attendeeInstance, field: "name")}</h4>
 	              		<p>Location: <strong>${fieldValue(bean: attendeeInstance, field: "location")}</strong></p>
