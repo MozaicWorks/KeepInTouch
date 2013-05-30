@@ -17,6 +17,11 @@ import org.junit.*
       assertEquals("Alex", attendee.name)
     }
 
+    void testNameIsMandatory() {
+      Attendee attendee = new Attendee(age: 20)
+      assertFalse attendee.validate()
+    }
+
     void testAgeTooYoung() {
       Attendee attendee = new Attendee(name:"Alex", age: 14)
       assertFalse attendee.validate()
