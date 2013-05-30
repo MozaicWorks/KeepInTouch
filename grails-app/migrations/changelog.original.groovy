@@ -74,7 +74,7 @@ databaseChangeLog = {
 				constraints(nullable: "false")
 			}
 
-			column(name: "SERIALIZED", type: "VARBINARY(20000)") {
+			column(name: "SERIALIZED", type: "bytea(20000)") {
 				constraints(nullable: "false")
 			}
 		}
