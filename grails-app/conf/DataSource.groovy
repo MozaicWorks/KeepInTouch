@@ -13,7 +13,7 @@ hibernate {
 environments {
     development {
         dataSource {
-            dialect = org.hibernate.dialect.PostgreSQLDialect
+			dialect = com.e4net.hibernate.dialect.PostgreSQL82Dialect
             url = "jdbc:h2:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
         }
     }
@@ -26,7 +26,7 @@ environments {
     production {
 	    dataSource {
 		driverClassName = "org.postgresql.Driver"
-		dialect = org.hibernate.dialect.PostgreSQLDialect
+		dialect = com.e4net.hibernate.dialect.PostgreSQL82Dialect
 		uri = new URI(System.env.DATABASE_URL?:"postgres://test:test@localhost/test")
 
 		url = "jdbc:postgresql://"+uri.host+uri.path
