@@ -104,12 +104,19 @@ class AttendeeController {
 		redirect(action: "show", id: attendeeInstance.id)
 	}
 
+    def getUUID  ={
+        return java.util.UUID.randomUUID().toString();
+    }
+
 	def uploadFile(request, attendeeInstance) {
 		def file = request.getFile("picture")
+
 		if(file && attendeeInstance.validate()) {
-			def fileName = file.getOriginalFilename()
-			attendeeInstance.picture = fileName
-			file.transferTo(new File("${grailsApplication.config.keepintouch.upload.path}/${fileName}"))
+			def fileName = getUUID + "-" +file.getOriginalFilename()
+            if(fileName){
+                attendeeInstance.picture = fileName
+                file.transferTo(new File("${grailsApplication.config.keepintouch.upload.path}/${fileName}"))
+            }
 		}
 	}
 

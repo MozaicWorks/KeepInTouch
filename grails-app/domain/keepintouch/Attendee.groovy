@@ -12,7 +12,7 @@ class Attendee {
   String picture
 
   static constraints = {
-    name()
+    name(blank: false)
     email(blank: true, nullable: true)
     location(blank: true, nullable: true)
     age(range: 15..90)
