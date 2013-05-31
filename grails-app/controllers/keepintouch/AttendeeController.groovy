@@ -23,19 +23,13 @@ class AttendeeController {
 
 	def save() {
 		def attendeeInstance = new Attendee(params)
-
-		def file = request.getFile("picture")
-		if(file && attendeeInstance.validate()) {
-			def fileName = file.getOriginalFilename()
-			attendeeInstance.picture = fileName
-            file.transferTo(new File("${grailsApplication.config.keepintouch.upload.path}/${fileName}"))
-		}
+		uploadFile(request, attendeeInstance)
 
 		if (!attendeeInstance.save(flush: true)) {
 			render(view: "create", model: [attendeeInstance: attendeeInstance])
 			return
 		}
-		
+
 
 		flash.message = message(code: 'default.created.message', args: [
 			message(code: 'attendee.label', default: 'Attendee'),
@@ -95,14 +89,8 @@ class AttendeeController {
 		}
 
 		attendeeInstance.properties = params
+		uploadFile(request, attendeeInstance)
 
-        def file = request.getFile("picture")
-        if(file && attendeeInstance.validate()) {
-            def fileName = file.getOriginalFilename()
-            attendeeInstance.picture = fileName
-            file.transferTo(new File("${grailsApplication.config.keepintouch.upload.path}/${fileName}"))
-        }
-		
 		if (!attendeeInstance.save(flush: true)) {
 			render(view: "edit", model: [attendeeInstance: attendeeInstance])
 			return
@@ -114,6 +102,15 @@ class AttendeeController {
 			attendeeInstance.id
 		])
 		redirect(action: "show", id: attendeeInstance.id)
+	}
+
+	def uploadFile(request, attendeeInstance) {
+		def file = request.getFile("picture")
+		if(file && attendeeInstance.validate()) {
+			def fileName = file.getOriginalFilename()
+			attendeeInstance.picture = fileName
+			file.transferTo(new File("${grailsApplication.config.keepintouch.upload.path}/${fileName}"))
+		}
 	}
 
 	def delete(Long id) {
