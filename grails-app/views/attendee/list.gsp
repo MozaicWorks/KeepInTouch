@@ -16,30 +16,30 @@
     </div>
     <div id="list-attendee" class="content scaffold-list" role="main">
       <g:if test="${flash.message}">
-      <div class="message" role="status">${flash.message}</div>
+        <div class="message" role="status">${flash.message}</div>
       </g:if>
 
       <div id="profiles-carousel" class="carousel slide">
         <ol class="carousel-indicators">
           <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
-          <li data-target="#profiles-carousel" data-slide-to="${i}" class="${i == 0 ? 'active' : ''}"></li>
+            <li data-target="#profiles-carousel" data-slide-to="${i}" class="${i == 0 ? 'active' : ''}"></li>
           </g:each>
         </ol>
         <!-- Carousel items -->
         <div class="carousel-inner">
           <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
 
-          <div class="${i == 0 ? 'active' : ''} item">
+            <div class="${i == 0 ? 'active' : ''} item">
 
-            <g:link action="show" id="${attendeeInstance.id}">
-            <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="500"/>
-            </g:link>
-            <div class="carousel-caption">
-              <h4>${fieldValue(bean: attendeeInstance, field: "name")}</h4>
-              <p>Location: <strong>${fieldValue(bean: attendeeInstance, field: "location")}</strong></p>
-              <p>Email: <strong>${fieldValue(bean: attendeeInstance, field: "email")}</strong></p>
+              <g:link action="show" id="${attendeeInstance.id}">
+                <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="500"/>
+              </g:link>
+              <div class="carousel-caption">
+                <h4>${fieldValue(bean: attendeeInstance, field: "name")}</h4>
+                <p>Location: <strong>${fieldValue(bean: attendeeInstance, field: "location")}</strong></p>
+                <p>Email: <strong>${fieldValue(bean: attendeeInstance, field: "email")}</strong></p>
+              </div>
             </div>
-          </div>
 
           </g:each>
         </div>
@@ -68,27 +68,27 @@
         </thead>
         <tbody>
           <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
-          <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-            <td>
-              <g:link action="show" id="${attendeeInstance.id}">${fieldValue(bean: attendeeInstance, field: "name")}</g:link>
-            </td>
-            <td>
-              ${fieldValue(bean: attendeeInstance, field: "location")}
-            </td>
-            <td>
-              <avatar:gravatar email="${attendeeInstance.email}"/>
-              ${fieldValue(bean: attendeeInstance, field: "email")}
-            </td>
-            <td>
-              ${fieldValue(bean: attendeeInstance, field: "age")}
-            </td>
-            <td>
-              ${fieldValue(bean: attendeeInstance, field: "twitter")}
-            </td>
-            <td>
-              ${fieldValue(bean: attendeeInstance, field: "blog")}
-            </td>
-          </tr>
+            <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+              <td>
+                <g:link action="show" id="${attendeeInstance.id}">${fieldValue(bean: attendeeInstance, field: "name")}</g:link>
+              </td>
+              <td>
+                ${fieldValue(bean: attendeeInstance, field: "location")}
+              </td>
+              <td>
+                <avatar:gravatar email="${attendeeInstance.email}"/>
+                ${fieldValue(bean: attendeeInstance, field: "email")}
+              </td>
+              <td>
+                ${fieldValue(bean: attendeeInstance, field: "age")}
+              </td>
+              <td>
+                ${fieldValue(bean: attendeeInstance, field: "twitter")}
+              </td>
+              <td>
+                ${fieldValue(bean: attendeeInstance, field: "blog")}
+              </td>
+            </tr>
           </g:each>
         </tbody>
       </table>
