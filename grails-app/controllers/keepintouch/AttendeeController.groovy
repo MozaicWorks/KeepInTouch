@@ -109,9 +109,10 @@ class AttendeeController {
 			render(view: "edit", model: [attendeeInstance: attendeeInstance])
 			return
 		}
-		
-		file.transferTo(new File("${grailsApplication.config.keepintouch.upload.path}/${fileName}"))
 
+        if(file) {
+		    file.transferTo(new File("${grailsApplication.config.keepintouch.upload.path}/${fileName}"))
+        }
 		flash.message = message(code: 'default.updated.message', args: [
 			message(code: 'attendee.label', default: 'Attendee'),
 			attendeeInstance.id
