@@ -44,7 +44,7 @@
         <ol class="carousel-indicators clearfix">
           <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
             <li data-target="#profiles-carousel" data-slide-to="${i}" class="${i == 0 ? 'active' : ''}">
-              <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="35"/>
+              <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="35" alt="${attendeeInstance.name}" title="${attendeeInstance.name}" />
             </li>
           </g:each>
         </ol>
