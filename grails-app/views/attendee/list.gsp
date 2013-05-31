@@ -22,7 +22,9 @@
       <div id="profiles-carousel" class="carousel slide">
         <ol class="carousel-indicators">
           <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
-            <li data-target="#profiles-carousel" data-slide-to="${i}" class="${i == 0 ? 'active' : ''}"></li>
+            <li data-target="#profiles-carousel" data-slide-to="${i}" class="${i == 0 ? 'active' : ''}">
+              <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="35"/>
+            </li>
           </g:each>
         </ol>
         <!-- Carousel items -->

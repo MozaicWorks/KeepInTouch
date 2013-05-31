@@ -1,3 +1,25 @@
+#profiles-carousel .carousel-indicators {
+  position: relative;
+  top: 0;
+  left: 10px;
+  height: 55px;
+}
+
+#profiles-carousel .carousel-indicators li {
+  background: none;
+  width: 40px;
+  height: 45px;
+  text-indent: 0;
+}
+
+#profiles-carousel .carousel-indicators li img {
+  border: 2px solid rgba(20, 20, 20, 0.2);
+}
+
+#profiles-carousel .carousel-indicators li.active img {
+  border-color: rgba(20, 20, 20, 0.9);
+}
+
 #profiles-carousel .carousel-inner {
   background: #000;
 }
