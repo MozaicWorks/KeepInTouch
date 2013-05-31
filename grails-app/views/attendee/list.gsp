@@ -27,7 +27,7 @@
             <div class="${i == 0 ? 'active' : ''} item" style="background-image: url(${resource(dir: 'upload', file: attendeeInstance.picture)})">
 
               <g:link action="show" id="${attendeeInstance.id}">
-                <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="130"/>/
+                <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="130"/>
               </g:link>
               <div class="carousel-caption">
                 <h4>${fieldValue(bean: attendeeInstance, field: "name")}</h4>
