@@ -20,13 +20,6 @@
       </g:if>
 
       <div id="profiles-carousel" class="carousel slide">
-        <ol class="carousel-indicators">
-          <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
-            <li data-target="#profiles-carousel" data-slide-to="${i}" class="${i == 0 ? 'active' : ''}">
-              <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="35"/>
-            </li>
-          </g:each>
-        </ol>
         <!-- Carousel items -->
         <div class="carousel-inner">
           <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
@@ -48,6 +41,13 @@
         <!-- Carousel nav -->
         <a class="carousel-control left" href="#profiles-carousel" data-slide="prev">&lsaquo;</a>
         <a class="carousel-control right" href="#profiles-carousel" data-slide="next">&rsaquo;</a>
+        <ol class="carousel-indicators clearfix">
+          <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
+            <li data-target="#profiles-carousel" data-slide-to="${i}" class="${i == 0 ? 'active' : ''}">
+              <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="35"/>
+            </li>
+          </g:each>
+        </ol>
       </div>
 
       <h1><g:message code="default.list.label" args="[entityName]" /></h1>
