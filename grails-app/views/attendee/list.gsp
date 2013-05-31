@@ -24,7 +24,7 @@
         <div class="carousel-inner">
           <g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
 
-            <div class="${i == 0 ? 'active' : ''} item" style="background-image: url("/upload/${attendeeInstance.picture}")">
+            <div class="${i == 0 ? 'active' : ''} item" style="background-image: url(/upload/${attendeeInstance.picture})">
 
               <g:link action="show" id="${attendeeInstance.id}">
                 <avatar:gravatar email="${attendeeInstance.email}" gravatarRating="R" size="130"/>
