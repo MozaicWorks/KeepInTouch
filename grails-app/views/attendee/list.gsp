@@ -88,7 +88,7 @@
                 ${fieldValue(bean: attendeeInstance, field: "twitter")}
               </td>
               <td>
-                ${fieldValue(bean: attendeeInstance, field: "blog")}
+                <a href="${fieldValue(bean: attendeeInstance, field: "blog")}">${fieldValue(bean: attendeeInstance, field: "blog")}</a>
               </td>
             </tr>
           </g:each>
