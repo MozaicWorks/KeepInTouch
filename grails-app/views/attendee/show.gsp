@@ -81,7 +81,7 @@
 
                 <g:if test="${attendeeInstance.picture}">
                     <li class="fieldcontain">
-                        <img src="${resource(dir: 'upload', file: attendeeInstance.picture)}"/>
+                        <img src="/upload/${attendeeInstance.picture}"/>
 
                     </li>
                 </g:if>
